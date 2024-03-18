@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\NEW\\source\\repos\\FileExplorer\\FileExplorer\\FileExplorer.csproj": {}
+    "C:\\Users\\NEW\\source\\repos\\FileEx\\FileExplorer\\FileExplorer\\FileExplorer.csproj": {}
   },
   "projects": {
-    "C:\\Users\\NEW\\source\\repos\\FileExplorer\\FileExplorer\\FileExplorer.csproj": {
+    "C:\\Users\\NEW\\source\\repos\\FileEx\\FileExplorer\\FileExplorer\\FileExplorer.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\NEW\\source\\repos\\FileExplorer\\FileExplorer\\FileExplorer.csproj",
+        "projectUniqueName": "C:\\Users\\NEW\\source\\repos\\FileEx\\FileExplorer\\FileExplorer\\FileExplorer.csproj",
         "projectName": "FileExplorer",
-        "projectPath": "C:\\Users\\NEW\\source\\repos\\FileExplorer\\FileExplorer\\FileExplorer.csproj",
+        "projectPath": "C:\\Users\\NEW\\source\\repos\\FileEx\\FileExplorer\\FileExplorer\\FileExplorer.csproj",
         "packagesPath": "C:\\Users\\NEW\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\NEW\\source\\repos\\FileExplorer\\FileExplorer\\obj\\",
+        "outputPath": "C:\\Users\\NEW\\source\\repos\\FileEx\\FileExplorer\\FileExplorer\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

@@ -28,5 +28,31 @@ namespace FileExplorer.Controllers
         {
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
+
+        
+    [HttpPost]
+    public async Task<IActionResult> Upload(UploadFileModel model)
+    {
+        if (ModelState.IsValid)
+        {
+            if (model.File != null && model.File.Length > 0)
+            {
+                using (var reader = new StreamReader(model.File.OpenReadStream()))
+                {
+                    model.FileContent = await reader.ReadToEndAsync();
+                }
+
+                return View("Upload", model);
+            }
+            else
+            {
+                ModelState.AddModelError(string.Empty, "Please select a file to upload.");
+            }
+        }
+
+        return View("Index", model);
+    }
+
+
     }
 }

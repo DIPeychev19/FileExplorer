@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "sA35PyxrNHDF245oKhFq4zzsvF0XRcJI9rj2onadYqMJpTUtqjHjvwGT0ashCO3Z0hDAYImzoNaansPam78fDg==",
+  "dgSpecHash": "oVJV0fEWcAe0HgpQZN5iqCxfpKCddDmc+8Nge3z4WzowiXIxW2R4dQkBMnrRyLsORsqDZX3vtNJqI410pi+TEw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\NEW\\source\\repos\\FileExplorer\\FileExplorer\\FileExplorer.csproj",
+  "projectFilePath": "C:\\Users\\NEW\\source\\repos\\FileEx\\FileExplorer\\FileExplorer\\FileExplorer.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\NEW\\.nuget\\packages\\humanizer\\2.14.1\\humanizer.2.14.1.nupkg.sha512",
     "C:\\Users\\NEW\\.nuget\\packages\\humanizer.core\\2.14.1\\humanizer.core.2.14.1.nupkg.sha512",
