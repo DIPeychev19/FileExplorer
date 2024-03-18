@@ -15,7 +15,8 @@ namespace FileExplorer.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            SingleFileModel model = new SingleFileModel();
+            return View(model);
         }
 
         public IActionResult Privacy()
@@ -29,30 +30,50 @@ namespace FileExplorer.Controllers
             return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
 
-        
-    [HttpPost]
-    public async Task<IActionResult> Upload(UploadFileModel model)
-    {
-        if (ModelState.IsValid)
+
+        public async Task<IActionResult> Upload(SingleFileModel model)
         {
-            if (model.File != null && model.File.Length > 0)
+            if (ModelState.IsValid)
             {
-                using (var reader = new StreamReader(model.File.OpenReadStream()))
+                model.IsResponse = true;
+
+                string path = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/uploads");
+
+                //create folder if not exist
+                if (!Directory.Exists(path))
+                    Directory.CreateDirectory(path);
+
+                //get file extension
+                FileInfo fileInfo = new FileInfo(model.File.FileName);
+                string fileName = model.FileName + fileInfo.Extension;
+
+                string fileNameWithPath = Path.Combine(path, fileName);
+
+                using (var stream = new FileStream(fileNameWithPath, FileMode.Create))
                 {
-                    model.FileContent = await reader.ReadToEndAsync();
+                    model.File.CopyTo(stream);
+                }
+                model.IsSuccess = true;
+                model.Message = "File upload successfully";
+            }
+
+            if (!ModelState.IsValid)
+            {
+                foreach (var entry in ModelState)
+                {
+                    if (entry.Value.Errors.Any())
+                    {
+                        foreach (var error in entry.Value.Errors)
+                        {
+                            ModelState.AddModelError(string.Empty, $"Field: {entry.Key}, Error: {error.ErrorMessage}");
+                        }
+                    }
                 }
 
-                return View("Upload", model);
+                // Display validation errors on the view
+                return View("Index", model);
             }
-            else
-            {
-                ModelState.AddModelError(string.Empty, "Please select a file to upload.");
-            }
+            return this.View("Index", model);
         }
-
-        return View("Index", model);
-    }
-
-
     }
 }

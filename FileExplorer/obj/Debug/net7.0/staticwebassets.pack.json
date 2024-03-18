@@ -245,6 +245,10 @@
       "PackagePath": "staticwebassets\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
+      "Id": "C:\\Users\\NEW\\source\\repos\\FileEx\\FileExplorer\\FileExplorer\\wwwroot\\uploads\\idk.jpg",
+      "PackagePath": "staticwebassets\\uploads\\idk.jpg"
+    },
+    {
       "Id": "obj\\Debug\\net7.0\\staticwebassets\\msbuild.FileExplorer.Microsoft.AspNetCore.StaticWebAssets.props",
       "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssets.props"
     },
